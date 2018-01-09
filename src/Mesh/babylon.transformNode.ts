@@ -686,6 +686,10 @@ module BABYLON {
                 return this._worldMatrix;
             }
 
+            if (!this._cache.position) {
+              this._initCache();
+            }
+
             this._cache.position.copyFrom(this.position);
             this._cache.scaling.copyFrom(this.scaling);
             this._cache.pivotMatrixUpdated = false;
